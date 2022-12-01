@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(228, 240, 250);
+    font: normal 15pt Arial;
+}
+header{
+    color: rgb(26, 26, 114);
+    font: normal 20pt Muro;
+    text-align: center;
+}
+section{
+    background-color: azure;
+    border-radius: 8px;
+    padding: 15px;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.51);
+}
+footer{
+    color: rgb(26, 26, 114);
+    text-align: center;
+    font-style: italic;
+}
