@@ -38,38 +38,40 @@ function reiniciar(){
 }
 
 function inverterCarta(i){
-    if(cartasViradas<2){
-    var valor = cartas[i].getAttribute("value");
-    cartas[i].setAttribute("src",`timesBR/time${valor}.png`);
-    cartasViradas++;
-    if(cartasViradas == 2){
-        setTimeout(function() {
-            if(valor1 == valor){//Acertou
-                acertos++;
-                cartas[i1].style.visibility = "hidden";
-                cartas[i].style.visibility = "hidden";
-                cartas[i1].setAttribute("src",`timesBR/time0.png`);
-                cartas[i].setAttribute("src",`timesBR/time0.png`);
-                cartasViradas = 0;
-                valor1 = 0;
-                i1 = 0;
-                if(acertos==8){
-                    alert("Parabens voce venceu!");
-                    reiniciar();
+        if(i1 != i){
+        if(cartasViradas<2){
+        var valor = cartas[i].getAttribute("value");
+        cartas[i].setAttribute("src",`timesBR/time${valor}.png`);
+        cartasViradas++;
+        if(cartasViradas == 2){
+            setTimeout(function() {
+                if(valor1 == valor){//Acertou
+                    acertos++;
+                    cartas[i1].style.visibility = "hidden";
+                    cartas[i].style.visibility = "hidden";
+                    cartas[i1].setAttribute("src",`timesBR/time0.png`);
+                    cartas[i].setAttribute("src",`timesBR/time0.png`);
+                    cartasViradas = 0;
+                    valor1 = 0;
+                    i1 = 0;
+                    if(acertos==8){
+                        alert("Parabens voce venceu!");
+                        reiniciar();
+                    }
                 }
-            }
-            else{
-                cartas[i1].setAttribute("src",`timesBR/time0.png`);
-                cartas[i].setAttribute("src",`timesBR/time0.png`);
-                cartasViradas = 0;
-                valor1 = 0;
-                i1 = 0;
-            }
-          }, 1000);
-    }
-    else{
-        valor1 = valor;
-        i1 = i;
+                else{
+                    cartas[i1].setAttribute("src",`timesBR/time0.png`);
+                    cartas[i].setAttribute("src",`timesBR/time0.png`);
+                    cartasViradas = 0;
+                    valor1 = 0;
+                    i1 = 0;
+                }
+            }, 1000);
+        }
+        else{
+            valor1 = valor;
+            i1 = i;
+        }
     }
 }
 }
