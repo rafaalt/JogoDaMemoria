@@ -39,6 +39,10 @@ function reiniciar(){
 
 function inverterCarta(i){
         if(i1 != i){
+        if(cartasViradas<2){
+        var valor = cartas[i].getAttribute("value");
+        cartas[i].setAttribute("src",`timesBR/time${valor}.png`);
+        cartasViradas++;
         if(cartasViradas == 2){
             setTimeout(function() {
                 if(valor1 == valor){//Acertou
@@ -67,9 +71,7 @@ function inverterCarta(i){
         else{
             valor1 = valor;
             i1 = i;
-            var valor = cartas[i].getAttribute("value");
-            cartas[i].setAttribute("src",`timesBR/time${valor}.png`);
-            cartasViradas++;
         }
+    }
 }
 }
